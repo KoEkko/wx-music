@@ -1,0 +1,32 @@
+/* components/song-item-v1/song-item-v1.wxss */
+
+.content {
+    display: flex;
+    box-sizing: border-box;
+    padding: 16rpx 0;
+}
+
+.content .image {
+    width: 156rpx;
+    height: 156rpx;
+    border-radius: 20rpx;
+}
+.info {
+    flex: 1;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14rpx;
+}
+.info .name {
+    font-size: 34rpx;
+    color: #000;
+}
+.info .artist {
+    display: flex;
+    gap: 10rpx;
+    font-size: 26rpx;
+    color:#888
+}
+

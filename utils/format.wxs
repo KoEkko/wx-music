@@ -1,0 +1,29 @@
+// 在 wxs 中 只能使用 es5
+function formatCount(count) {
+    // 将字符串转化为 数字
+    count = Number(count)
+    if(count >= 100000000 ) {
+        return (count / 100000000).toFixed(1) + "亿"
+    } else if (count >= 10000) {
+        return (count / 10000 ).toFixed(1) + "万"
+    } else {
+        return count
+    }
+}
+function padLeft(time) {
+    time = time + ""
+    return ("00" + time ).slice(time.length)
+}
+function formatTime(time) {
+    // 将毫秒转化为秒
+    time = time / 1000 
+    var minute = Math.floor(time / 60 )
+    var second = Math.floor(time % 60 )
+    return padLeft(minute) + ":" + padLeft(second)
+}
+// 必须导出后，才能被其他地方调用，必须使用CJS导出
+
+module.exports = {
+    formatCount:formatCount,
+    formatTime:formatTime
+}

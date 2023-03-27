@@ -1,0 +1,15 @@
+/* pages/detai-menu/detail-menu.wxss */
+page {
+    box-sizing: border-box;
+    padding: 0 20rpx;
+}
+
+.lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lists .iten {
+    width: 48%;
+}

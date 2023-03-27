@@ -1,0 +1,63 @@
+<!--pages/main-music/main-music.wxml-->
+<van-search
+  value="{{ value }}"
+  shape="round"
+  background="#fafafa"
+  placeholder="请输入搜索关键词"
+  bind:click-input="onSearchClick"
+/>
+
+<swiper class="banner" circular indicator-dots style="height: {{bannerHeight}}px;" wx:if="{{ banners.length}}">
+    <block wx:for="{{banners}}" wx:key="targetId">
+        <swiper-item class="item">
+            <image class="banner-image" src="{{item.imageUrl}}" mode="widthFix" bindload="onImageLoad"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<!-- 推荐歌单 -->
+<view class="recommend" wx:if="{{ recommendSongs.length }}">
+    <area-header title="推荐歌曲" bind:MoreClick="onRecommendMoreClick"/>
+    <view class="content">
+        <block wx:for="{{recommendSongs}}" wx:key="id">
+            <song-item-v1 infos="{{item}}" data-index="{{index}}" bindtap="onSongDetailTap" data-id="{{ item.id }}"/>
+        </block>
+    </view>
+</view>
+
+<!-- 热门歌单 -->
+<menu-area title="热门歌单" menuLists="{{hotSongsMenu}}"></menu-area>
+
+<!-- 推荐歌单 -->
+<menu-area title="推荐歌单" menuLists="{{recSongsMenu}}"></menu-area>
+
+<!-- 巅峰榜 -->
+<view class="ranking" wx:if="{{ isRankingHas }}">
+    <area-header title="巅峰榜" hasMore="{{false}}"/>
+    <view class="ranking-list">
+        <block wx:for="{{rankingInfos}}" wx:key="id">
+            <ranking-item itemData="{{item}}" key="{{ index }}"/>
+        </block>
+    </view>
+</view>
+
+<!-- 播放歌曲的小栏目 -->
+<view class="play-bar-placeholder"></view>
+<view class="play-bar" wx:if="{{ currentSong.name || isPlaying }}">
+    <view class="left">
+        <image class="album album-ani" 
+            src="{{currentSong.al.picUrl}}" 
+            style="animation-play-state: {{ isPlaying ? 'running' : 'paused'}};"
+            bindtap="onAlbumTap"
+        />
+        <view class="name">{{currentSong.name}}</view>
+    </view>
+    <view class="right">
+        <image class="play" 
+            src="/assets/images/music/{{ isPlaying ? 'pause' : 'play'}}_icon.png"
+            bindtap="onPlayorPausedTap" 
+        />
+        <image class="playlist" src="/assets/images/music/playlist_icon.png" mode=""/>
+    </view>
+
+</view>

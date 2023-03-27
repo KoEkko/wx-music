@@ -1,0 +1,15 @@
+<!--components/song-item-v1/song-item-v1.wxml-->
+<view class="content">
+    <image class="image" src="{{infos.al.picUrl}}" mode="widthFix"/>
+    <view class="info">
+        <view class="name">{{infos.name}}</view>
+        <view class="artist">
+            <block wx:for="{{infos.ar}}" wx:key="id">
+                <view class="item">
+                    {{item.name}}
+                </view>
+            </block>
+        </view>
+    </view>
+    <van-icon class="icon" name="arrow" color="#888" size="26rpx"/>
+</view>

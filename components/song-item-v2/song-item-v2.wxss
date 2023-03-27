@@ -1,0 +1,36 @@
+/* components/song-item-v2/song-item-v2.wxss */
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.item .index {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10rpx;
+    padding: 10rpx 20rpx;
+}
+.info .singer {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.info .icon {
+    width: 38rpx;
+    height: 22rpx;
+    margin-right: 10rpx;
+}
+
+.more {
+    margin-right: 20rpx;
+    font-size: 30rpx;
+    color: #aaa;
+}

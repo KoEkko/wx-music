@@ -1,0 +1,19 @@
+<!--components/more-video-item/more-video-item.wxml-->
+<wxs module="fmt" src="/utils/format.wxs"></wxs>
+<view class="content" bindtap="onMoreVideoTap">
+    <view class="video">
+        <image src="{{mvInfos.coverUrl}}" class="image" mode="widthFix">
+            <view class="count">
+            {{fmt.formatCount(mvInfos.playTime)}}
+            </view>
+        </image>
+    </view>
+    <view class="title">
+        {{mvInfos.title}}
+        <block wx:for="{{mvInfos.creator}}" wx:key="id">
+            <view class="name">
+                {{item.userName}}
+            </view>
+        </block>
+    </view>
+</view>

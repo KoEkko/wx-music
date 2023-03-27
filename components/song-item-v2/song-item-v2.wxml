@@ -1,0 +1,16 @@
+<!--components/song-item-v2/song-item-v2.wxml-->
+<view class="item">
+    <view class="index">{{ index }}</view>
+    <view class="info">
+        <view class="name">
+            {{itemData.name}}
+        </view>
+        <view class="dec">
+            <image class="icon" src="/assets/images/icons/sq_icon.png" mode=""/>
+            <text class="singer">{{itemData.ar[0].name}}</text>
+        </view>
+    </view>
+    <view class="more" catchtap="onMoreIconTap">
+        <van-icon name="more-o" />
+    </view>
+</view>

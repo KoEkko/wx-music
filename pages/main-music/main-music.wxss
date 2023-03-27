@@ -1,0 +1,80 @@
+/* pages/main-music/main-music.wxss */
+page {
+    --search-background-color: #fff
+    --padding-sm：12px 0;
+    
+    box-sizing: border-box;
+    padding:0 24rpx;
+    background-color: #fafafa;
+
+}
+
+.banner {
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+}
+
+.play-bar-placeholder {
+    height: 100rpx;
+}
+.play-bar {
+    height: 90rpx ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #fff;
+}
+.play-bar .left,
+.play-bar .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left .album {
+    position: relative;
+    top: -16rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-left: 28rpx;
+}
+
+.left .name {
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 26rpx;
+    margin-left: 6rpx;
+    color: #333;
+}
+
+.right .play, .playlist{
+    width: 60rpx;
+    height: 60rpx;
+}
+.playlist {
+    margin-right: 28rpx;
+}
+
+@keyframes rotateAni {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.album-ani {
+    animation: rotateAni 10s infinite linear;
+}

@@ -1,0 +1,14 @@
+<!--components/hot-song-menu/hot-song-menu.wxml-->
+<wxs module="fmt" src="/utils/format.wxs">
+</wxs>
+<view class="hot-menu" bindtap="itemTap">
+        <view class="top">
+            <image src="{{itemData.coverImgUrl}}" mode="widthFix" class="image"/>
+            <view class="play">
+                {{fmt.formatCount(itemData.playCount)}}
+            </view>
+        </view>
+        <view class="bottom">
+            <view class="title">{{itemData.name}}</view>
+        </view>
+</view>

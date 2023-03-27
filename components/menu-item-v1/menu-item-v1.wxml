@@ -1,0 +1,13 @@
+<!--components/menu-item-v1/menu-item-v1.wxml-->
+<view class="item" bindtap="onItemTap">
+    <image class="icon" src="{{itemData.songList[0].al.picUrl}}" mode="" wx:if="{{itemData.songList.length}}"/>
+    <image class="icon" src="/assets/images/icons/music.png" mode="" wx:else/>
+    <view class="info">
+        <view class="infos">
+            <view class="name">{{itemData.name}}</view>
+            <view class="count">{{itemData.songList.length}}首</view>
+        </view>
+        <van-icon class="delete-icon" name="delete-o" catchtap="onDelteTap" data-item="{{itemData._id}}"/>
+    </view>
+
+</view>

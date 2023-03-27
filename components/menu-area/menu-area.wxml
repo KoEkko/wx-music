@@ -1,0 +1,11 @@
+<!--components/menu-area/menu-area.wxml-->
+<view class="hot-menu" wx:if="{{ menuLists.length }}">
+    <area-header title="{{title}}" bind:MoreClick="onMoreTap"></area-header>
+    <scroll-view class="hot-main" scroll-x enable-flex style="width: {{screenWidth}}px;">
+        <block wx:for="{{menuLists}}" wx:key="id">
+            <view class="hot-item">
+                <hot-song-menu itemData="{{item}}" ></hot-song-menu>
+            </view>
+        </block>
+    </scroll-view>
+</view>

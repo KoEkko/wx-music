@@ -1,0 +1,27 @@
+/* components/menu-item-v1/menu-item-v1.wxss */
+.item {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 20rpx;
+}
+
+.item .icon{
+    width: 58rpx;
+    height: 58rpx;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item .infos {
+    margin-left: 20rpx;
+    font-size: 28rpx;
+}
+
+.item .infos .count {
+    font-size: 24rpx;
+    color: #aaa;
+}

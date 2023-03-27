@@ -1,0 +1,30 @@
+/* components/nav-bar/nav-bar.wxss */
+.bar {
+    display: flex;
+    height: 88rpx;
+}
+.nav-bar {
+    color: #fff;
+}
+
+.left, .right {
+    width: 120rpx;
+}
+
+.left, .right, .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    flex: 1;
+}
+
+.default {
+    display: none;
+}
+
+.slot:empty + .default {
+    display: flex;
+}
